@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools { 
+        maven 'M3'
+    }
     options {
         timestamps()
     }
