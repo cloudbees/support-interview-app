@@ -10,7 +10,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 script {
-                    currentBuild.displayName = "Milestone 3"
+                    currentBuild.displayName = "Milestone 3: ${BUILD_NUMBER}"
                 }
                 checkout scm
             }
