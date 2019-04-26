@@ -6,9 +6,6 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                script {
-                    currentBuild.displayName = "Milestone 2"
-                }
                 checkout scm
             }
         }
