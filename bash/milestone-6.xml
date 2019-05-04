@@ -11,7 +11,9 @@
 <concurrentBuild>false</concurrentBuild>
 <builders>
 <hudson.tasks.Shell>
-<command>echo "Hello World"</command>
+<command>
+#!/bin/bash -e echo "Setting up..." touch /tmp/1 echo "Running build..." ruby -e 'files = []; for i in 0..1000; files << File.open("/tmp/1"); end;'
+</command>
 </hudson.tasks.Shell>
 </builders>
 <publishers/>

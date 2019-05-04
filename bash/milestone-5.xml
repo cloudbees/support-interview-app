@@ -1,19 +1,12 @@
-<project>
-<description/>
-<keepDependencies>false</keepDependencies>
-<properties/>
-<scm class="hudson.scm.NullSCM"/>
-<canRoam>true</canRoam>
-<disabled>false</disabled>
-<blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
-<blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
-<triggers/>
-<concurrentBuild>false</concurrentBuild>
-<builders>
-<hudson.tasks.Shell>
-<command>echo "Hello World"</command>
-</hudson.tasks.Shell>
-</builders>
-<publishers/>
-<buildWrappers/>
-</project>
+import groovy.json.JsonSlurper
+
+@NonCPS
+def loadJson() {
+  def inputFile = new File("/var/jenkins_home/001-output.json")
+  def InputJSON1 = new JsonSlurper().parseText(inputFile.text)
+}
+
+while (true) {
+    println "Loading JSON"
+    loadJson()
+}
