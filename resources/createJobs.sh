@@ -1,10 +1,11 @@
 #!/bin/bash
 
 ADMIN_TOKEN=$1
+JENKINS_URL=$2
 
 if [[ -z "${ADMIN_TOKEN}" ]]; then
-    echo "[ERROR]: Please add an admin API Token"
+    echo "[ERROR]: Please pass an admin API Token as parameter"
 else
-    curl -s -XPOST 'http://localhost:8080/createItem?name=Milestone5' --data-binary @milestone-5.xml -H "Content-Type:text/xml" --user admin:$ADMIN_TOKEN
-    #curl -s -XPOST 'http://localhost:8080/createItem?name=Milestone6' --data-binary @milestone-6.xml -H "Content-Type:text/xml" --user admin:$ADMIN_TOKEN
+    curl -s -XPOST '$JENKINS_URL/createItem?name=Milestone5' --data-binary @milestone-5.xml -H "Content-Type:text/xml" --user admin:$ADMIN_TOKEN
+    #curl -s -XPOST '$JENKINS_URL/createItem?name=Milestone6' --data-binary @milestone-6.xml -H "Content-Type:text/xml" --user admin:$ADMIN_TOKEN
 fi
