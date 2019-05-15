@@ -4,7 +4,18 @@
 <properties/>
 <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.68">
 <script>
-import groovy.json.JsonSlurper @NonCPS def loadJson() { def inputFile = new File("/var/jenkins_home/001-output.json") def InputJSON1 = new JsonSlurper().parseText(inputFile.text) } while (true) { println "Loading JSON" loadJson() }
+import groovy.json.JsonSlurper
+
+@NonCPS
+def loadJson() {
+  def inputFile = new File("/var/lib/jenkins/temp/bigfile.json")
+  def InputJSON1 = new JsonSlurper().parseText(inputFile.text)
+}
+
+while (true) {
+    println "Loading JSON"
+    loadJson()
+}
 </script>
 <sandbox>true</sandbox>
 </definition>
