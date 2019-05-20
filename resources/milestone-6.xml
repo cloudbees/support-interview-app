@@ -17,7 +17,8 @@ echo "Setting up..."
 touch /tmp/1
 
 echo "Running build..."
-ruby -e "files = []; for i in 0..1000; files.push(File.open(\"/tmp/1\")); end;"</command>
+echo "open a file 1000 times in shell"
+</command>
 </hudson.tasks.Shell>
 </builders>
 <publishers/>
