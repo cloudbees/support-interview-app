@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools { 
+        maven 'FAKE_VERSION'
+    }
     stages {
         stage('Checkout') {
             steps {
