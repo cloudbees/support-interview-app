@@ -2,7 +2,6 @@
 
 set -x
 ADMIN_TOKEN=$1
-JENKINS_URL=$2
 
 if [[ -z "${ADMIN_TOKEN}" ]]; then
     echo "[ERROR]: Please pass an admin API Token as parameter"
