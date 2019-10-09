@@ -13,11 +13,14 @@
 <hudson.tasks.Shell>
 <command>#!/bin/bash -e
 
+#!/bin/bash -e
+
 echo "Setting up..."
 touch /tmp/1
-
 echo "Running build..."
-echo "open a file 1000 times in shell"
+echo "Open files 1500 times..."
+ruby -e 'files = []; for i in 0..1500; files << File.open("/tmp/1"); end'
+
 </command>
 </hudson.tasks.Shell>
 </builders>
