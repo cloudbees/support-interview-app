@@ -15,7 +15,7 @@ while (true) {
     println "Loading JSON"
     loadJson()
 }</script>
-<sandbox>true</sandbox>
+<sandbox>false</sandbox>
 </definition>
 <triggers/>
 <disabled>false</disabled>
